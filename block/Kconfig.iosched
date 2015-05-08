@@ -33,6 +33,7 @@ config IOSCHED_CFQ
 	  This is the default I/O scheduler.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 config IOSCHED_TRIPNDROID
 	tristate "TripNDroid IO Scheduler"
@@ -85,6 +86,8 @@ config IOSCHED_VR
 	Requests are chosen according to SSTF with a penalty of rev_penalty
 	for switching head direction.	  
 
+=======
+>>>>>>> 09c830a... Block: Add BFQ and FIOPS Schedulers, Optimize Deadline
 config IOSCHED_BFQ
 	tristate "BFQ I/O scheduler"
 	default y
@@ -97,6 +100,7 @@ config IOSCHED_BFQ
 	  applications. If compiled built-in (saying Y here), BFQ can
 	  be configured to support hierarchical scheduling.
 
+<<<<<<< HEAD
 config IOSCHED_FIOPS
 	tristate "IOPS based I/O scheduler"
 	default y
@@ -107,6 +111,8 @@ config IOSCHED_FIOPS
 
 
 
+=======
+>>>>>>> 09c830a... Block: Add BFQ and FIOPS Schedulers, Optimize Deadline
 config CGROUP_BFQIO
 	bool "BFQ hierarchical scheduling support"
 	depends on CGROUPS && IOSCHED_BFQ=y
@@ -116,13 +122,25 @@ config CGROUP_BFQIO
 	  filesystem interface.  The name of the subsystem will be
 	  bfqio.
 
+<<<<<<< HEAD
 >>>>>>> 1fb18bf... Block: added I/O Schedulers
+=======
+>>>>>>> 09c830a... Block: Add BFQ and FIOPS Schedulers, Optimize Deadline
 config CFQ_GROUP_IOSCHED
 	bool "CFQ Group Scheduling support"
 	depends on IOSCHED_CFQ && BLK_CGROUP
 	default n
 	---help---
 	  Enable group IO scheduling in CFQ.
+
+config IOSCHED_FIOPS
+	tristate "IOPS based I/O scheduler"
+	default y
+	---help---
+	  This is an IOPS based I/O scheduler. It will try to distribute
+          IOPS equally among all processes in the system. It's mainly for
+          Flash based storage.
+
 
 choice
 	prompt "Default I/O scheduler"
@@ -140,6 +158,7 @@ choice
 	config DEFAULT_NOOP
 		bool "No-op"
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         config DEFAULT_TRIPNDROID
@@ -166,6 +185,8 @@ choice
 	config DEFAULT_NOOP
 		bool "No-op"
 
+=======
+>>>>>>> 09c830a... Block: Add BFQ and FIOPS Schedulers, Optimize Deadline
 	config DEFAULT_BFQ
 		bool "BFQ" if IOSCHED_BFQ=y
 		help
@@ -179,7 +200,10 @@ choice
 	config DEFAULT_FIOPS
 		bool "FIOPS" if IOSCHED_FIOPS=y
 
+<<<<<<< HEAD
 >>>>>>> 1fb18bf... Block: added I/O Schedulers
+=======
+>>>>>>> 09c830a... Block: Add BFQ and FIOPS Schedulers, Optimize Deadline
 endchoice
 
 config DEFAULT_IOSCHED
@@ -188,6 +212,8 @@ config DEFAULT_IOSCHED
 	default "tripndroid" if DEFAULT_TRIPNDROID
 	default "sioplus" if DEFAULT_SIOPLUS
 	default "cfq" if DEFAULT_CFQ
+	default "bfq" if DEFAULT_BFQ
+	default "fiops" if DEFAULT_FIOPS
 	default "noop" if DEFAULT_NOOP
         default "sio" if DEFAULT_SIO
 	default "fifo" if DEFAULT_FIFO

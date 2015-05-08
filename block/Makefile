@@ -16,6 +16,7 @@ obj-$(CONFIG_IOSCHED_NOOP)	+= noop-iosched.o
 obj-$(CONFIG_IOSCHED_DEADLINE)	+= deadline-iosched.o
 obj-$(CONFIG_IOSCHED_CFQ)	+= cfq-iosched.o
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 obj-$(CONFIG_IOSCHED_BFQ)	+= bfq-iosched.o
 obj-$(CONFIG_IOSCHED_FIOPS)	+= fiops-iosched.o
@@ -26,6 +27,10 @@ obj-$(CONFIG_IOSCHED_VR)        += vr-iosched.o
 obj-$(CONFIG_IOSCHED_SIOPLUS)	+= sioplus-iosched.o
 obj-$(CONFIG_IOSCHED_TRIPNDROID)   += tripndroid-iosched.o
 >>>>>>> 1fb18bf... Block: added I/O Schedulers
+=======
+obj-$(CONFIG_IOSCHED_BFQ)	+= bfq-iosched.o
+obj-$(CONFIG_IOSCHED_FIOPS)	+= fiops-iosched.o
+>>>>>>> 09c830a... Block: Add BFQ and FIOPS Schedulers, Optimize Deadline
 
 obj-$(CONFIG_BLOCK_COMPAT)	+= compat_ioctl.o
 obj-$(CONFIG_BLK_DEV_INTEGRITY)	+= blk-integrity.o
