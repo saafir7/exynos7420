@@ -1,7 +1,12 @@
 VERSION = 3
 PATCHLEVEL = 10
+<<<<<<< HEAD
 SUBLEVEL = 61
 EXTRAVERSION = -krunk-kernel-@saafir
+=======
+SUBLEVEL = 101
+EXTRAVERSION =
+>>>>>>> a5c7d9a... Linux 3.10.101
 NAME = TOSSUG Baby Fish
 
 #TOOLCHAIN_DIR=$(CURDIR)/toolchain/aarch64-linux-android-5.3-kernel/bin/aarch64-linux-android-
