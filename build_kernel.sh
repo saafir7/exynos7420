@@ -182,7 +182,7 @@ echo "${bldcya}***** Make archives *****${txtrst}"
 cp -R ./kernel ${KERNELDIR}/output/$TARGET/
 cp -R ./supersu ${KERNELDIR}/output/$TARGET/
 cp -R ./busybox ${KERNELDIR}/output/$TARGET/
-cp ./$TARGET/boot.img ${KERNELDIR}/output/$TARGET/sickness
+cp ./$TARGET/boot.img ${KERNELDIR}/output/$TARGET/kernel
 cp -R ./system ${KERNELDIR}/output/$TARGET/
 cp -R ./META-INF ${KERNELDIR}/output/$TARGET/
 

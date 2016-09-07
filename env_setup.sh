@@ -67,7 +67,7 @@ export SUB_ARCH=arm64;
 
 # G920P
 if [ "$TARGET" = "G920P" ] ; then
-	export KERNEL_CONFIG="custom_defconfig";
+	export KERNEL_CONFIG="exynos7420-zerofltespr_defconfig";
 fi;
 
 # G925P

@@ -1396,12 +1396,12 @@ service media /system/bin/mediaserver
 service apaservice /system/bin/apaservice
     class main
     user jack
-    group system inet sdcard_rw sdcard_r media_rw shell
+    group inet sdcard_rw sdcard_r media_rw shell
 
 service jackservice /system/bin/jackservice
     class main
     user jack
-    group system audio inet shell
+    group audio inet shell
     
 # One shot invocation to deal with encrypted volume.
 service defaultcrypto /system/bin/vdc --wait cryptfs mountdefaultencrypted
@@ -1652,16 +1652,3 @@ on property:service.vpnclientd.enable=0
 # Reactivation lock
 	service reactived /system/bin/reactived
 	class late_start
-
-# Sickness.Sh Activation 
-service sickinit /sbin/sick.sh
-    class core
-    user root
-    oneshot
-
-# init.d support enabler
-service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
-    class late_start
-    user root
-    group shell
-    oneshot   
